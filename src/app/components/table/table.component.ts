@@ -21,8 +21,6 @@ export interface FinalAirData {
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  public citta: string = "";
-  public updateTime: Date;
   displayedColumns: string[] = ['name', 'description', 'currentValue', 'minValue', 'maxValue'];
   public dataSource: FinalAirData = {
     airData: [
@@ -84,7 +82,7 @@ export class TableComponent implements OnInit {
   ngOnInit(): void {
     this.dataservice.getTableData().subscribe((value) => {
       console.log(value.rxs.obs[0].msg.city.name)
-      //iterare per costruire array di FinalAirData in datasource
+
       this.dataSource.city = value.rxs.obs[0].msg.city.name;
 
       this.dataSource.time = value.rxs.obs[0].msg.time.utc.s;
