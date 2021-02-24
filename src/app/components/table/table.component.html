@@ -1,6 +1,9 @@
 <div class="container">
-    <h2>Air Data Quality: {{dataSource.city}}</h2>
-    <table mat-table [dataSource]="dataSource.airData" class="mat-elevation-z8">
+    <mat-toolbar>
+        <h2>Air Data Quality: {{dataSource.city}}</h2>
+    </mat-toolbar>
+
+    <table mat-table [dataSource]="dataSource.airData" class="mat-elevation-z15">
 
         <!--- Note that these columns can be defined in any order.
         The actual rendered columns are set as a property on the row definition" -->
@@ -12,7 +15,7 @@
         </ng-container>
 
         <ng-container matColumnDef="description">
-            <th mat-header-cell *matHeaderCellDef> Description </th>
+            <th mat-header-cell *matHeaderCellDef class="descr"> Description </th>
             <td mat-cell *matCellDef="let element"> {{element.description}} </td>
         </ng-container>
 
@@ -35,5 +38,5 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <h2>Last Update: {{dataSource.time}}</h2>
+    <h3>Last Update: {{dataSource.time | date:'dd-MM-yyyy'}}</h3>
 </div>

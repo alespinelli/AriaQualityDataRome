@@ -92,7 +92,19 @@ export class TableComponent implements OnInit {
         this.dataSource.airData[i].currentValue = value.rxs.obs[0].msg.iaqi[i].v[0];
         this.dataSource.airData[i].minValue = value.rxs.obs[0].msg.iaqi[i].v[1];
         this.dataSource.airData[i].maxValue = value.rxs.obs[0].msg.iaqi[i].v[2];
-        this.dataSource.airData[i].name = value.rxs.obs[0].msg.iaqi[i].p;
+
+        switch (value.rxs.obs[0].msg.iaqi[i].p) {
+          case 'p'
+            : this.dataSource.airData[i].name = "Pressure";
+            break
+          case 'h'
+            : this.dataSource.airData[i].name = "Humidity";
+            break
+          case 't'
+            : this.dataSource.airData[i].name = "Temperature";
+            break
+          default: this.dataSource.airData[i].name = value.rxs.obs[0].msg.iaqi[i].p
+        };
         this.dataSource.airData[i].description = value.rxs.obs[0].msg.iaqi[i].i;
       }
 

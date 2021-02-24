@@ -1,18 +1,38 @@
 table {
-  width: 90%;
-}
-td:nth-child(1){
-  width: 30px;
-  padding: 0 15px;
-}
-td:nth-child(2){
-  padding: 0 10px;
-  max-width: 90px;
-}
-th{
-  font-weight: 700;
+  width: 90%; 
+  color: black;
+  font-weight: 500; 
+  margin-top: 2em;
 }
 
+
+td:nth-child(1){
+font-weight: bold;
+}
+td:nth-child(2){
+  padding-right: 40px;
+  width: 43%;
+  
+}
+td{
+  width:12%;
+ align-items: center;
+ padding-left: 10px;
+
+}
+td:last-child{
+  width:5%;
+}
+th{
+   color: red;
+  font-weight: 800;
+ text-align: center;
+ font-style: italic;
+ text-transform: capitalize;
+}
+.descr{
+   text-align: center;
+}
 .container{
   display: flex;
   justify-content: center;
@@ -23,4 +43,13 @@ th{
 h2{
   margin: 15px 0;
   text-align: center;
+  color: white;
+}
+h3{
+  margin-top: 1em;
+}
+mat-toolbar{
+  display: flex;
+  justify-content: center;
+  background:linear-gradient(#ff0000, #ce9e01);
 }

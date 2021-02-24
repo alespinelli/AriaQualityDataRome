@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { TableComponent } from './components/table/table.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http'
 
 @NgModule({
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http'
     BrowserModule,
     BrowserAnimationsModule,
     MatTableModule,
+    MatToolbarModule,
     HttpClientModule,
   ],
   providers: [],
