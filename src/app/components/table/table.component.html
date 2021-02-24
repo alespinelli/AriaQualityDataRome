@@ -38,5 +38,5 @@
         <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
         <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     </table>
-    <h3>Last Update: {{dataSource.time | date:'dd-MM-yyyy'}}</h3>
+    <h3>Last Update: {{dataSource.time | date:'dd-MM-yyyy - HH:mm:ss'}}</h3>
 </div>
