@@ -1,19 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
 
-export interface AirData {
-  name: string,
-  description: string,
-  currentValue: string,
-  minValue: number,
-  maxValue: number
-}
-
-export interface FinalAirData {
-  airData: AirData[],
-  time: string,
-  city: string
-}
+import { FinalAirData, AirData } from '../../models/air-data';
 
 @Component({
   selector: 'app-table',
@@ -81,7 +69,7 @@ export class TableComponent implements OnInit {
 
   ngOnInit(): void {
     this.dataservice.getTableData().subscribe((value) => {
-      console.log(value.rxs.obs[0].msg.city.name)
+      //console.log(value.rxs.obs[0].msg.city.name)
 
       this.dataSource.city = value.rxs.obs[0].msg.city.name;
 

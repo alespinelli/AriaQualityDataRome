@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http'
-import { FinalAirData } from './table.component';
+import { FinalAirData } from '../../models/air-data';
 import { Observable } from 'rxjs';
 
 @Injectable({
