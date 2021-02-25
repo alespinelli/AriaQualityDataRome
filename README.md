@@ -1,10 +1,10 @@
 # AirQualityRome
 
-##Info
+## Info
 json url: https://api.waqi.info/api/feed/@9352/obs.en.json
 Zone: Arenula, Roma, Lazio, Italy
 
-##How to access data
+## How to access data
 -Zone name: rxs.obs[0].msg.city.name
 -Last update: rxs.obs[0].msg.time.utc.s
 -Analyzed data:
