@@ -20,8 +20,9 @@ export class TableComponent implements OnInit {
 
       this.dataSource.city = value.rxs.obs[0].msg.city.name;
 
-      this.dataSource.time = value.rxs.obs[0].msg.time.utc.s;
-      for (let i = 0; i < 7; i++) {
+      //this.dataSource.time = value.rxs.obs[0].msg.time.utc.s ;
+      this.dataSource.time = value.rxs.obs[0].msg.time.s.en.time;
+      for (let i = 0; i < 9; i++) {
         this.dataSource.airData[i].currentValue = value.rxs.obs[0].msg.iaqi[i].v[0];
         this.dataSource.airData[i].minValue = value.rxs.obs[0].msg.iaqi[i].v[1];
         this.dataSource.airData[i].maxValue = value.rxs.obs[0].msg.iaqi[i].v[2];
