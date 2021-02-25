@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DataService } from './data.service';
 
-import { FinalAirData, AirData } from '../../models/air-data';
+import { FinalAirData } from '../../models/air-data';
+import { DEFAULT_AIR_DATA } from './../../models/air-data';
 
 @Component({
   selector: 'app-table',
@@ -9,62 +10,8 @@ import { FinalAirData, AirData } from '../../models/air-data';
   styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-  displayedColumns: string[] = ['name', 'description', 'currentValue', 'minValue', 'maxValue'];
-  public dataSource: FinalAirData = {
-    airData: [
-      {
-        name: '',
-        description: '',
-        currentValue: '',
-        minValue: 0,
-        maxValue: 0
-      },
-      {
-        name: '',
-        description: '',
-        currentValue: '',
-        minValue: 0,
-        maxValue: 0
-      },
-      {
-        name: '',
-        description: '',
-        currentValue: '',
-        minValue: 0,
-        maxValue: 0
-      },
-      {
-        name: '',
-        description: '',
-        currentValue: '',
-        minValue: 0,
-        maxValue: 0
-      },
-      {
-        name: '',
-        description: '',
-        currentValue: '',
-        minValue: 0,
-        maxValue: 0
-      },
-      {
-        name: '',
-        description: '',
-        currentValue: '',
-        minValue: 0,
-        maxValue: 0
-      },
-      {
-        name: '',
-        description: '',
-        currentValue: '',
-        minValue: 0,
-        maxValue: 0
-      }
-    ],
-    time: '',
-    city: ''
-  };
+  public displayedColumns: string[] = ['name', 'description', 'currentValue', 'minValue', 'maxValue'];
+  public dataSource: FinalAirData = DEFAULT_AIR_DATA;
   constructor(private dataservice: DataService) { }
 
   ngOnInit(): void {
