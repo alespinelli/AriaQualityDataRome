@@ -7,13 +7,17 @@ Zone: Arenula, Roma, Lazio, Italy
 
 ## How to access data
 
--Zone name: rxs.obs[0].msg.city.name
+### -Basic data:
 
--Last update: rxs.obs[0].msg.time.utc.s
+  -Zone name: rxs.obs[0].msg.city.name
 
--Analyzed data:
+  -Last update: rxs.obs[0].msg.time.utc.s
 
-  rxs.obs[0].msg.iaqi = [pm25, pm10, o3, no2, temperature, pressure, humidity]
+### -Analyzed data:
+
+  rxs.obs[0].msg.iaqi = [pm25, pm10, o3, no2, t, p, h]
+  
+  (t = Temperature, p = Pressure, h = Humidity)
   
   Each element of iaqi array is a struct, made like this:
   
