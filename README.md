@@ -11,7 +11,7 @@ Zone: Arenula, Roma, Lazio, Italy
 
   -Zone name: rxs.obs[0].msg.city.name
 
-  -Last update: rxs.obs[0].msg.time.utc.s
+  -Last update(date and time): rxs.obs[0].msg.time.utc.s
 
 ### -Analyzed data:
 
