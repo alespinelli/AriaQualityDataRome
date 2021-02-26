@@ -15,68 +15,75 @@ export interface FinalAirData {
 export const DEFAULT_AIR_DATA: FinalAirData = {
   airData: [
     {
-      name: '',
+      name: '1',
       description: '',
       currentValue: '',
       minValue: 0,
       maxValue: 0
     },
     {
-      name: '',
+      name: '2',
       description: '',
       currentValue: '',
       minValue: 0,
       maxValue: 0
     },
     {
-      name: '',
+      name: '3',
       description: '',
       currentValue: '',
       minValue: 0,
       maxValue: 0
     },
     {
-      name: '',
+      name: '4',
       description: '',
       currentValue: '',
       minValue: 0,
       maxValue: 0
     },
     {
-      name: '',
+      name: '5',
       description: '',
       currentValue: '',
       minValue: 0,
       maxValue: 0
     },
     {
-      name: '',
+      name: '6',
       description: '',
       currentValue: '',
       minValue: 0,
       maxValue: 0
     },
     {
-      name: '',
+      name: '7',
       description: '',
       currentValue: '',
       minValue: 0,
       maxValue: 0
     },
     {
-      name: '',
+      name: '8',
       description: '',
       currentValue: '',
       minValue: 0,
       maxValue: 0
     },
     {
-      name: '',
+      name: '9',
       description: '',
       currentValue: '',
       minValue: 0,
       maxValue: 0
     },
+    {
+      name: '10',
+      description: '',
+      currentValue: '',
+      minValue: 0,
+      maxValue: 0
+    }
   ],
   time: '',
   city: ''

@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataService } from './data.service';
 
-import { FinalAirData } from '../../models/air-data';
+import { AirData, FinalAirData } from '../../models/air-data';
 import { DEFAULT_AIR_DATA } from './../../models/air-data';
+import { MatTable } from '@angular/material/table';
 
 @Component({
   selector: 'app-table',
@@ -12,6 +13,8 @@ import { DEFAULT_AIR_DATA } from './../../models/air-data';
 export class TableComponent implements OnInit {
   public displayedColumns: string[] = ['name', 'description', 'currentValue', 'minValue', 'maxValue'];
   public dataSource: FinalAirData = DEFAULT_AIR_DATA;
+  @ViewChild('myTable') airTable: MatTable<AirData>;
+
   constructor(private dataservice: DataService) { }
 
   ngOnInit(): void {
@@ -22,7 +25,9 @@ export class TableComponent implements OnInit {
 
       //this.dataSource.time = value.rxs.obs[0].msg.time.utc.s ;
       this.dataSource.time = value.rxs.obs[0].msg.time.s.en.time;
-      for (let i = 0; i < 9; i++) {
+
+      let i = 0;
+      while (value.rxs.obs[0].msg.iaqi[i] && i<this.dataSource.airData.length) {
         this.dataSource.airData[i].currentValue = value.rxs.obs[0].msg.iaqi[i].v[0];
         this.dataSource.airData[i].minValue = value.rxs.obs[0].msg.iaqi[i].v[1];
         this.dataSource.airData[i].maxValue = value.rxs.obs[0].msg.iaqi[i].v[2];
@@ -40,9 +45,13 @@ export class TableComponent implements OnInit {
           default: this.dataSource.airData[i].name = value.rxs.obs[0].msg.iaqi[i].p
         };
         this.dataSource.airData[i].description = value.rxs.obs[0].msg.iaqi[i].i;
+        i++;
       }
-
-
+      if(this.dataSource.airData[i]){
+              console.log('true');
+              this.dataSource.airData.splice(i, this.dataSource.airData.length - i);
+              this.airTable.renderRows();
+      }
     });
   }
 

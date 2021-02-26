@@ -3,7 +3,7 @@
         <h2>Air Data Quality: {{dataSource.city}}</h2>
     </mat-toolbar>
 
-    <table mat-table [dataSource]="dataSource.airData" class="mat-elevation-z15">
+    <table #myTable mat-table [dataSource]="dataSource.airData" class="mat-elevation-z15">
 
 
         <ng-container matColumnDef="name">
